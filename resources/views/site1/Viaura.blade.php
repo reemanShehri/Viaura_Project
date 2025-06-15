@@ -14,6 +14,28 @@
 </head>
 
 <body>
+    {{-- message contact --}}
+@if(session('success'))
+    <div
+        id="success-alert"
+        class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative transition-opacity duration-1000 ease-in-out"
+        style="opacity: 1;"
+    >
+        <strong class="font-bold">نجاح! </strong>
+        <span class="block sm:inline">{{ session('success') }}</span>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            const el = document.getElementById('success-alert');
+            if (el) {
+                el.style.opacity = '0';
+                setTimeout(() => el.remove(), 1000); // Remove after fade-out
+            }
+        }, 3000);
+    </script>
+@endif
+
 
   <!-- Splash Screen -->
  {{-- <div class="splash">
@@ -53,7 +75,7 @@
               </a>
             </li>
             <li class="nav-item" data-aos="fade-left" data-aos-delay="400">
-              <a href="{{ route('login') }}" class="btn btn-success me-3">
+              <a href="{{ route('register') }}" class="btn btn-success me-3">
                 SIGNUP
               </a>
             </li>
@@ -76,11 +98,9 @@
             <h1 class="mb-20" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Because Every Dream <br>
               <div class="span">Deserves a Chance</div>
             </h1>
-            <p class="w-50 mx-auto mb-40" data-aos="fade-up" data-aos-delay="500" data-aos-duration="500">Lorem ipsum,
-              dolor sit amet consectetur adipisicing elit. Iusto veritatis unde
-              illo labore est alias
-              saepe, similique voluptate soluta dolore quibusdam ipsum libero blanditiis.</p>
-
+            <p class="w-50 mx-auto mb-40" data-aos="fade-up" data-aos-delay="500" data-aos-duration="500">
+                Empowering Ambitions, One Skill at a Time
+Unlock your full potential with expert-led courses and career-driven insights tailored to help you thrive in today’s competitive job market.
           </div>
           <div class=" row search" data-aos="fade-up" data-aos-delay="700" data-aos-duration="500">
             <div class="col-lg-8 col-12 search-panel mx-auto ">
@@ -107,18 +127,18 @@
             <div class="col-lg-12">
               <span data-aos="fade-down" data-aos-delay="300" data-aos-duration="500">About</span>
               <h2 class="mb-20 fw-700" data-aos="fade-right" data-aos-delay="200" data-aos-duration="500">Viaura </h2>
-              <p data-aos="fade-right" data-aos-delay="200" data-aos-duration="500">Lorem ipsum dolor, sit amet
-                consectetur adipisicing elit. Velit, distinctio.</p>
+              <p data-aos="fade-right" data-aos-delay="200" data-aos-duration="500">
+               </p>
             </div>
           </div>
           <div class="row align-items-center mb-5">
             <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300" data-aos-duration="500">
               <h3 class="mb-40 fw-700">Education</h3>
-              <p class="mb-40">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos esse tempore, quam,
-                adipisci doloribus
-                nobis exercitationem unde iure ut, recusandae dolor laudantium odit cum debitis quae. Aut delectus saepe
-                veniam ipsam hic repellendus labore placeat voluptatibus. Doloremque, dicta cumque nihil deserunt qui
-                sint ab cupiditate aspernatur, aperiam debitis nulla sit.</p>
+              <p class="mb-40">
+
+                Accelerate Your Tech Journey with Expert Coding Courses
+Our education platform offers hands-on programming tutorials, real-world projects, and career-focused guidance to help you
+ master today’s most in-demand development skills — from web and mobile apps to data science and beyond.</p>
               <a href="{{ route('viaura.education') }}" class="btn btn-success mb-sm-4">Explore More <i
                   class="fa-solid fa-angle-right "></i> </a>
             </div>
@@ -132,11 +152,11 @@
             </div>
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="400" data-aos-duration="500">
               <h3 class="mb-40 mt-sm-4 fw-700">Jobs</h3>
-              <p class="mb-40">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos esse tempore, quam,
-                adipisci doloribus
-                nobis exercitationem unde iure ut, recusandae dolor laudantium odit cum debitis quae. Aut delectus saepe
-                veniam ipsam hic repellendus labore placeat voluptatibus. Doloremque, dicta cumque nihil deserunt qui
-                sint ab cupiditate aspernatur, aperiam debitis nulla sit.</p>
+              <p class="mb-40">
+
+                Explore the World of Freelancing and Find Your Path
+We guide you through top freelancing platforms and break down each field — from design and development to writing and marketing —
+so you know exactly what it takes to succeed.</p>
               <a href="" class="btn btn-success">Explore More <i class="fa-solid fa-angle-right "></i> </a>
             </div>
 
@@ -152,7 +172,7 @@
         <div class="row text-center ">
           <div class="col-lg-12 title " data-aos="fade-up" data-aos-delay="300">
             <h2 class="mb-3"> <span>Educational</span> Programs</h2>
-            <p class="mb-5 mx-auto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic rerum quidem et!</p>
+            <p class="mb-5 mx-auto"></p>
           </div>
           <div class="col-md-4 mb-4 pb-2 " data-aos="fade-up" data-aos-delay="100">
             <div class="education-card card">
@@ -160,7 +180,7 @@
               <div class="card-body text-center ">
                 <h5 class="pt-3">Frontend Program</h5>
                 <p>A brief description of the first project and its key features.</p>
-                <a href="{{ route('login') }}" class="btn btn-success">Get Started</a>
+                <a href="{{ route('register') }}" class="btn btn-success">Get Started</a>
               </div>
             </div>
           </div>
@@ -190,8 +210,8 @@
             <img src="{{ asset('Front/images/educationExplore.svg') }}" alt="" class="w-100">
           </div>
           <div class="col-lg-5">
-            <h3 class="mb-40 mt-sm-5" data-aos="fade-left" data-aos-delay="100">Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit.</h3>
+            <h3 class="mb-40 mt-sm-5" data-aos="fade-left" data-aos-delay="100">
+</h3>
             <a href="{{ route('viaura.education') }}" class="btn btn-outline-success" data-aos="fade-up" data-aos-delay="200">Explore
               More <i class="fa-solid fa-angle-right "></i></a>
           </div>
@@ -205,7 +225,7 @@
         <div class="row  text-center">
           <div class="col-lg-12 title" data-aos="fade-up" data-aos-delay="300">
             <h2 class="mb-3"> <span>Job</span> Opportunity</h2>
-            <p class="mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic rerum quidem et!</p>
+            <p class="mb-5"></p>
           </div>
           <div class="col-lg-4">
             <div class="content transition-all" data-aos="fade-up" data-aos-delay="100">
@@ -217,7 +237,7 @@
           </div>
           <div class="col-lg-4">
             <div class="content transition-all" data-aos="fade-up" data-aos-delay="200">
-              <a href="{{ route('login') }}">
+              <a href="{{ route('register') }}">
                 <i class="fa-solid fa-palette"></i>
                 Design
               </a>
@@ -258,7 +278,7 @@
         </div>
         <div class="row explore-more align-items-center justify-content-evenly my-5">
           <div class="col-lg-5">
-            <h3 class="mb-40 mt-sm-5" data-aos="fade-right" data-aos-delay="100">Lorem ipsum dolor sit, amet consectetur
+            <h3 class="mb-40 mt-sm-5" data-aos="fade-right" data-aos-delay="100">Contact Us
               adipisicing elit.</h3>
             <a href="" class="btn btn-outline-success" data-aos="fade-up" data-aos-delay="200">Explore More <i
                 class="fa-solid fa-angle-right "></i></a>
@@ -277,7 +297,7 @@
         <div class="row align-items-center">
           <div class="col-lg-12 title text-center">
             <h2 class="mb-3" data-aos="fade-down" data-aos-delay="100">Get in <span>touch</span></h2>
-            <p data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni officiis nulla!</p>
+            <p data-aos="fade-up" data-aos-delay="100"></p>
           </div>
           <!-- Contact Form Column -->
           <div class="col-lg-6 mb-4 mb-lg-0">
@@ -303,8 +323,7 @@
                 @endif
 
             @endif
-
-            <form action="{{ route('contact_data') }}" method="POST" novalidate class="w-80 mx-auto">
+<form action="mailto:r409456712@gmail.com.com" method="POST" enctype="text/plain">
                 @csrf
               <div class="mb-3">
                 <label for="name" class="form-label ms-3" data-aos="fade-right" data-aos-delay="200">Full Name</label>
@@ -343,6 +362,8 @@
               <button type="submit" class="btn-outline-success ms-3 px-4 py-2 fw-600 transition-all">Send</button>
             </form>
           </div>
+
+
 
           <!-- SVG Placeholder Column -->
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">

@@ -51,25 +51,25 @@
         </div>
 
         {{-- Stats Section --}}
-        <div class="bg-white shadow-sm rounded-lg p-6">
+        {{-- <div class="bg-white shadow-sm rounded-lg p-6">
             <h3 class="text-xl font-semibold mb-4">Statistics Overview</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-gray-800">
                 <div>Total Categories: <strong>{{ $categoriesCount ?? '...' }}</strong> <a href="{{ route('admin.categories.index') }}" class="text-blue-500 hover:underline">(View)</a></div>
                 <div>Total Courses: <strong>{{ $coursesCount ?? '...' }}</strong> <a href="{{ route('admin.courses.index') }}" class="text-blue-500 hover:underline">(View)</a></div>
                 <div>Total Users: <strong>{{ $usersCount ?? '...' }}</strong> <a href="{{ route('admin.users.index') }}" class="text-blue-500 hover:underline">(View)</a></div>
             </div>
-        </div>
+        </div> --}}
 
-        {{-- Charts (مثال، أضف بيانات مناسبة في الكونترولر) --}}
+        {{-- Charts (مثال، أضف بيانات مناسبة في الكونترولر)
         <div class="bg-white shadow-sm rounded-lg p-6">
             <h3 class="text-xl font-semibold mb-4">User Registrations (Last 6 Months)</h3>
             <canvas id="registrationsChart" style="max-height:300px;"></canvas>
-        </div>
+        </div> --}}
 
-        <div class="bg-white shadow-sm rounded-lg p-6">
+        {{-- <div class="bg-white shadow-sm rounded-lg p-6">
             <h3 class="text-xl font-semibold mb-4">Top 5 Courses by Number of Students</h3>
             <canvas id="topCoursesChart" style="max-height:300px;"></canvas>
-        </div>
+        </div> --}}
 
     </div>
 

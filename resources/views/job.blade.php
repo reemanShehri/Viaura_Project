@@ -73,6 +73,10 @@
             font-weight: 500;
         }
 
+
+
+
+
         .bg-purple {
             background-color: var(--primary-color) !important;
         }
@@ -195,8 +199,8 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    @foreach($categories as $category)
+ <div class="row">
+                  @foreach($categories as $category)
                     <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
                         <div class="card job-card h-100">
                             <div class="position-relative" style="height: 150px; overflow: hidden;">
@@ -211,28 +215,30 @@
                                 <h5 class="card-title">{{ $category->name }}</h5>
 
                                 <div class="jobs-container flex-grow-1">
+                                                                                    <span class="job-title">{{ $category->job_opportunities }}</span>
+
                                     @if($category->jobs->count() > 0)
                                         @foreach($category->jobs as $job)
-                                        <div class="job-item p-2 mb-2 bg-light rounded">
+                                        <div class="job-item p-2 mb-10 bg-light rounded">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <span class="job-title">{{ $job->title }}</span>
                                                 <span class="badge bg-purple">New</span>
                                             </div>
                                             @if($job->company)
-                                            <div class="company text-muted small mt-1">
+                                            <div class="company text-muted small mt-50">
                                                 <i class="fas fa-building"></i> {{ $job->company }}
                                             </div>
                                             @endif
                                         </div>
                                         @endforeach
                                     @else
-                                        <div class="no-jobs alert alert-warning text-center py-3">
+                                        <div class="no-jobs alert alert-warning text-center py-3 mb-3">
                                             <i class="fas fa-exclamation-circle"></i> No Jobs Found
                                         </div>
                                     @endif
                                 </div>
 
-                                <div class="total-jobs mt-3 pt-2 border-top text-center">
+                                <div class="total-jobs mt-5 pt-3 border-top text-center">
                                     <span class="badge bg-dark rounded-pill px-3 py-2">
                                         Total: {{ $category->jobs->count() }} jobs
                                     </span>
@@ -240,6 +246,11 @@
                             </div>
                         </div>
                     </div>
+                    <br>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <br>
                     @endforeach
                 </div>
             </div>

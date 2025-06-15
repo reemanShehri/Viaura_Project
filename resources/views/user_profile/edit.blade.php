@@ -189,6 +189,22 @@
                     </div>
 
 
+
+
+                    <div class="mt-4">
+    <x-input-label for="experience" :value="__('Professional Experience')" />
+    <x-text-input
+        id="experience"
+        name="experience"
+        type="text"
+        class="mt-1 block w-full"
+        :value="old('experience', $user->experience)"
+        placeholder="Example: 5 years as Web Developer at XYZ Company"
+    />
+    <x-input-error class="mt-2" :messages="$errors->get('experience')" />
+</div>
+
+
                     <div>
     <x-input-label for="linkedin" :value="__('LinkedIn Profile')" />
     <x-text-input id="linkedin" name="linkedin" type="url" class="mt-1 block w-full"

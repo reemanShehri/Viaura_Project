@@ -32,6 +32,8 @@ class User extends Authenticatable
     'portfolio',
     'github',
     'address',
+        'experience'
+
     ];
 
     /**

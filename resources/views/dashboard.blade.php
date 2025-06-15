@@ -11,44 +11,90 @@
     <link rel="website icon" href="{{ asset('Front/images/LOGO.svg') }}">
     <link rel="stylesheet" href="{{ asset('Front/CSS/education.css') }}">
 
-
-
     <style>
-    .category-link {
-        font-size: 24px;
-        font-weight: bold;
-        color: #5e3bee; /* بنفسجي غامق */
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
+        .category-link {
+            font-size: 24px;
+            font-weight: bold;
+            color: #5e3bee;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-    .category-link:hover {
-        color: #000000; /* أسود عند المرور */
-        text-decoration: underline;
-    }
+        .category-link:hover {
+            color: #000000;
+            text-decoration: underline;
+        }
 
-    .category-title {
-        text-align: start;
-        padding-bottom: 10px;
-        border-bottom: 2px solid #5e3bee;
-        margin-bottom: 20px;
-    }
-</style>
+        .category-title {
+            text-align: start;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #5e3bee;
+            margin-bottom: 20px;
+        }
 
+        /* تنسيقات صندوق البحث */
+        .searchBox {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        .searchBox i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #5e3bee;
+        }
+
+        .searchBox input {
+            padding: 8px 15px 8px 35px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            width: 250px;
+            transition: all 0.3s ease;
+        }
+
+        .searchBox input:focus {
+            outline: none;
+            border-color: #5e3bee;
+            box-shadow: 0 0 5px rgba(94, 59, 238, 0.3);
+        }
+
+        /* رسالة عدم وجود نتائج */
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg" data-aos="fade-down" data-aos-delay="100" data-aos-duration="800">
             <div class="container">
-                <a class="navbar-brand" data-aos="fade-right" data-aos-delay="600" data-aos-duration="800" href="#"><img
-                        src="{{ asset('Front/images/Dark-viaura-logo.svg') }}" class="w-36" alt=""></a>
+                <a class="navbar-brand" data-aos="fade-right" data-aos-delay="600" data-aos-duration="800" href="#">
+                    <img src="{{ asset('Front/images/Dark-viaura-logo.svg') }}" class="w-36" alt="">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav main">
+ <ul class="navbar-nav main">
+
+                         @auth
+    @if(Auth::user()->role === 'admin')
+        <li class="nav-item" data-aos="fade-down" data-aos-duration="400" data-aos-delay="650">
+            <a class="nav-link fw-bold mx-3 text" href="{{ route('admin.dashboard') }}">
+                <i class="bi bi-speedometer2" style="color: #000000"></i> Admin Panel
+            </a>
+             </li>
+           @endif
+          @endauth
+
                         <li data-aos="fade-down" data-aos-delay="300" data-aos-duration="800" class="nav-item">
                             <a class="nav-link" aria-current="page" href="{{ route('viaura.viaura') }}">Home</a>
                         </li>
@@ -58,13 +104,10 @@
                         <li data-aos="fade-down" data-aos-delay="500" data-aos-duration="800" class="nav-item">
                             <a class="nav-link" href="#contact">Contact</a>
                         </li>
-
-
                         <li data-aos="fade-down" data-aos-delay="500" data-aos-duration="800" class="nav-item">
                             <a class="nav-link" href="{{ route('job') }}">Jobs</a>
                         </li>
-
-<li data-aos="fade-down" data-aos-delay="500" data-aos-duration="800" class="nav-item d-flex align-items-center">
+                        <li data-aos="fade-down" data-aos-delay="500" data-aos-duration="800" class="nav-item" style="margin-top: 8px;">
     <form method="POST" action="{{ route('logout') }}">
         @csrf
         <button type="submit" class="nav-link btn btn-link p-0 m-0" style="border: none; background: none;">
@@ -72,24 +115,20 @@
         </button>
     </form>
 </li>
-
-    </form>
-</li>
-
                     </ul>
 
                     <div class="searchBox" data-aos="fade-left" data-aos-delay="700" data-aos-duration="800">
                         <i class="fas fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Search courses" />
+                        <input type="text" placeholder="Search courses" id="courseSearchInput">
                     </div>
 
                     <div class="user-account">
                         <img class="w-30"
-     src="{{ Auth::user()->profile_photo_path ? asset('profile_images/' . basename(Auth::user()->profile_photo_path)) : 'https://ui-avatars.com/api/?name=' . urlencode(Auth::user()->name) . '&color=7F9CF5&background=EBF4FF' }}"
-     alt="user"
-     data-aos="fade-left"
-     data-aos-delay="1000"
-     data-aos-duration="800">
+                            src="{{ Auth::user()->profile_photo_path ? asset('profile_images/' . basename(Auth::user()->profile_photo_path)) : 'https://ui-avatars.com/api/?name=' . urlencode(Auth::user()->name) . '&color=7F9CF5&background=EBF4FF' }}"
+                            alt="user"
+                            data-aos="fade-left"
+                            data-aos-delay="1000"
+                            data-aos-duration="800">
                         <a href="{{ route('profile.show') }}" data-aos="fade-left" data-aos-delay="1100" data-aos-duration="800">
                             {{ Auth::user()->name }}
                         </a>
@@ -98,90 +137,151 @@
             </div>
         </nav>
     </header>
+
     <main>
         <button class="back-top">
             <i class="fa-solid fa-angles-up"></i>
         </button>
 
-     <section id="courses" class="courses pt-150-pb-100">
-    <div class="container">
-        @foreach ($categories as $category)
-            <div class="category-section mb-5">
+        <section id="courses" class="courses pt-150-pb-100">
+            <div class="container">
+                <div id="no-results-message" class="no-results">
+                    <p>No courses found matching your search.</p>
+                </div>
 
-                <h2 class="category-title mb-3">
-    <a href="{{ route('category.show', $category->id) }}" class="category-link">
-        {{ $category->name }}
-    </a>
-</h2>
+                @foreach ($categories as $category)
+                    <div class="category-section mb-5">
+                        <h2 class="category-title mb-3">
+                            <a href="{{ route('category.show', $category->id) }}" class="category-link">
+                                {{ $category->name }}
+                            </a>
+                        </h2>
 
-                <p>{{ $category->description }}</p>
+                        <p>{{ $category->description }}</p>
 
-                {{-- تقسيم الكورسات إلى صفوف فيها 3 كروت --}}
-                @foreach ($category->courses->chunk(3) as $courseChunk)
-                    <div class="row">
-                        @foreach ($courseChunk as $course)
-                            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                                <div class="education-card card">
-                                    <img src="{{ asset('Front/images/educational-program.jpg') }}" alt="{{ $course->title }}">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">{{ $course->title }}</h5>
-                                        <p class="card-text">{{ $course->description }}</p>
-                                        <a href="{{ $course->video_url }}" target="_blank" class="btn btn-primary">
-                                            Watch Course
-                                        </a>
+                        @foreach ($category->courses->chunk(3) as $courseChunk)
+                            <div class="row course-row">
+                                @foreach ($courseChunk as $course)
+                                    <div class="col-md-4 mb-4 course-item" data-aos="fade-up" data-aos-delay="100">
+                                        <div class="education-card card">
+                                            <img src="{{ asset('Front/images/educational-program.jpg') }}" alt="{{ $course->title }}">
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title course-title">{{ $course->title }}</h5>
+                                                <p class="card-text">{{ $course->description }}</p>
+                                                <a href="{{ $course->video_url }}" target="_blank" class="btn btn-primary">
+                                                    Watch Course
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                @endforeach
                             </div>
                         @endforeach
                     </div>
                 @endforeach
             </div>
-        @endforeach
-    </div>
-</section>
-
-
+        </section>
     </main>
+
     <footer>
         <div id="contact" class="container ptb-100">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 mx-auto">
-              <div class="single-footer">
-                <h2 class="mb-40">Viaura</h2>
-                <p class="mb-40">Viaura connects learning with real-world opportunities
-                  One platform for skills, growth, and freelance success</p>
-                <a href="" class="btn btn-outline-success" data-aos="fade-up" data-aos-delay="200">Explore More <i
-                    class="fa-solid fa-angle-right "></i></a>
-              </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <div class="single-footer">
+                        <h2 class="mb-40">Viaura</h2>
+                        <p class="mb-40">Viaura connects learning with real-world opportunities
+                        One platform for skills, growth, and freelance success</p>
+                        <a href="" class="btn btn-outline-success" data-aos="fade-up" data-aos-delay="200">Explore More <i
+                            class="fa-solid fa-angle-right "></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 links mt-sm-4">
+                    <div class="single-footer w-50 mx-auto">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><a href="{{ route('viaura.viaura') }}"><i class="fa-solid fa-angle-right "></i> Home</a></li>
+                            <li><a href="{{ route('viaura.viaura') }}"><i class="fa-solid fa-angle-right "></i> About viaura</a></li>
+                            <li><a href="{{ route('dashboard') }}"><i class="fa-solid fa-angle-right "></i> Educational Programs</a></li>
+                            <li><a href="{{ route('job') }}"><i class="fa-solid fa-angle-right "></i> Job Categories </a></li>
+                            <li><a href="{{ route('job') }}"><i class="fa-solid fa-angle-right "></i> Explore Opportunities </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 socials">
+                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a href=""><i class="fab fa-github"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-x-twitter"></i></a>
+                </div>
             </div>
-            <div class="col-lg-4 col-md-6  links mt-sm-4 ">
-              <div class="single-footer w-50 mx-auto">
-                <h4>Useful Links</h4>
-                <ul>
-                  <li><a href="{{ route('viaura.viaura') }}"><i class="fa-solid fa-angle-right "></i> Home</a></li>
-                  <li><a href="{{ route('viaura.viaura') }}"><i class="fa-solid fa-angle-right "></i> About viaura</a></li>
-                  <li><a href="{{ route('dashboard') }}"><i class="fa-solid fa-angle-right "></i> Educational Programs</a></li>
-                  <li><a href="{{ route('job') }}"><i class="fa-solid fa-angle-right "></i> Job Categories </a></li>
-                  <li><a href="{{ route('job') }}"><i class="fa-solid fa-angle-right "></i> Explore Opportunities </a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-12 socials">
-              <a href=""><i class="fab fa-facebook-f"></i></a>
-              <a href=""><i class="fab fa-linkedin-in"></i></a>
-              <a href=""><i class="fab fa-github"></i></a>
-              <a href=""><i class="fab fa-instagram"></i></a>
-              <a href=""><i class="fab fa-x-twitter"></i></a>
-            </div>
-          </div>
         </div>
-        <div class="copy-right-area text-center ">
-          <p>Viaura &copy; 2025 All rights reserved.</p>
+        <div class="copy-right-area text-center">
+            <p>Viaura &copy; 2025 All rights reserved.</p>
         </div>
-      </footer>
+    </footer>
+
     <script src="{{ asset('Front/JS/bootstrap.bundle.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="{{ asset('Front/JS/education.js') }}"></script>
-</body>
 
+    <script>
+        // تهيئة AOS animation
+        AOS.init();
+
+        // دالة فلترة الكورسات مع debounce
+        let searchTimer;
+
+        function filterCourses() {
+            clearTimeout(searchTimer);
+            searchTimer = setTimeout(() => {
+                const searchTerm = document.getElementById('courseSearchInput').value.toLowerCase().trim();
+                const courses = document.querySelectorAll('.course-item');
+                let hasResults = false;
+
+                // إخفاء جميع صفوف الكورسات أولاً
+                document.querySelectorAll('.course-row').forEach(row => {
+                    row.style.display = 'none';
+                });
+
+                // البحث في الكورسات
+                courses.forEach(course => {
+                    const courseTitle = course.querySelector('.course-title');
+                    if (!courseTitle) return;
+
+                    const courseName = courseTitle.textContent.toLowerCase();
+                    const isMatch = courseName.includes(searchTerm);
+
+                    if (isMatch) {
+                        course.style.display = 'block';
+                        course.closest('.course-row').style.display = 'flex';
+                        hasResults = true;
+                    } else {
+                        course.style.display = 'none';
+                    }
+                });
+
+                // إدارة رسالة عدم وجود نتائج
+                const noResultsMsg = document.getElementById('no-results-message');
+                if (noResultsMsg) {
+                    noResultsMsg.style.display = hasResults ? 'none' : 'block';
+
+                    // إظهار عناوين الأقسام التي تحتوي على نتائج
+                    document.querySelectorAll('.category-section').forEach(section => {
+                        const hasVisibleCourses = section.querySelector('.course-item[style="display: block;"]');
+                        section.style.display = hasVisibleCourses || !searchTerm ? 'block' : 'none';
+                    });
+                }
+            }, 300);
+        }
+
+        // إضافة event listener عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('courseSearchInput');
+            if (searchInput) {
+                searchInput.addEventListener('keyup', filterCourses);
+            }
+        });
+    </script>
+</body>
 </html>

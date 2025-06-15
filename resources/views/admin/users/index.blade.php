@@ -13,21 +13,21 @@
         @endif
 
         <form method="GET" action="{{ route('admin.users.index') }}" class="mb-4 flex items-center gap-2">
-            <input 
-                type="text" 
-                name="search" 
-                placeholder="Search by name..." 
-                value="{{ request('search') }}" 
+            <input
+                type="text"
+                name="search"
+                placeholder="Search by name..."
+                value="{{ request('search') }}"
                 class="border border-gray-300 rounded px-3 py-2"
             />
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Search</button>
-            <a href="{{ route('admin.users.index') }}" 
+            <a href="{{ route('admin.users.index') }}"
                class="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400">
                Reset
             </a>
         </form>
-        
-        
+
+
 
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6">
             <table class="min-w-full table-auto">
@@ -50,13 +50,13 @@
                             <td class="px-4 py-2">{{ $user->email }}</td>
                             <td class="px-4 py-2 capitalize">{{ $user->role }}</td>
                             <td class="px-4 py-2">
-                                <img 
-                                    src="{{ $user->profile_photo_path ? asset('images/profile_photos/' . $user->profile_photo_path) : 'https://ui-avatars.com/api/?name=' . urlencode($user->name) . '&background=cccccc&color=000000' }}" 
-                                    alt="{{ $user->name }}" 
+                                <img
+src="{{ $user->profile_photo_path ? asset($user->profile_photo_path) : 'https://ui-avatars.com/api/?name=' . urlencode($user->name) . '&background=cccccc&color=000000' }}"
+                                    alt="{{ $user->name }}"
                                     class="h-10 w-10 rounded-full object-cover"
                                 />
                             </td>
-                            
+
                             <td class="px-4 py-2 flex gap-2">
                                 <a href="{{ route('admin.users.edit', $user->id) }}" class="text-blue-600 hover:underline">Edit</a>
                                 <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Are you sure?')">

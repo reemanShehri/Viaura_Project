@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="{{ asset('Front/CSS/profile.css') }}">
 </head>
 
-<body>
+<body style="background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='304' height='304'%3E%3Cpath fill='%23885ddd' fill-opacity='0.07' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160 48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0 2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5 5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5 5 0 1 1 2 0zm-128 96V208h16v12.1a5 5 0 1 1-2 0V210h-16v-76.1a5 5 0 1 1 2 0zm-5.9-21.9a5 5 0 1 1 0 2H114v48H85.9a5 5 0 1 1 0-2H112v-48h12.1zm-6.2 130a5 5 0 1 1 0-2H176v-74.1a5 5 0 1 1 2 0V242h-60.1zm-16-64a5 5 0 1 1 0-2H114v48h10.1a5 5 0 1 1 0 2H112v-48h-10.1zM66 284.1a5 5 0 1 1-2 0V274H50v30h-2v-32h18v12.1zM236.1 176a5 5 0 1 1 0 2H226v94h48v32h-2v-30h-48v-98h12.1zm25.8-30a5 5 0 1 1 0-2H274v44.1a5 5 0 1 1-2 0V146h-10.1zm-64 96a5 5 0 1 1 0-2H208v-80h16v-14h-42.1a5 5 0 1 1 0-2H226v18h-16v80h-12.1zm86.2-210a5 5 0 1 1 0 2H272V0h2v32h10.1zM98 101.9V146H53.9a5 5 0 1 1 0-2H96v-42.1a5 5 0 1 1 2 0zM53.9 34a5 5 0 1 1 0-2H80V0h2v34H53.9zm60.1 3.9V66H82v64H69.9a5 5 0 1 1 0-2H80V64h32V37.9a5 5 0 1 1 2 0zM101.9 82a5 5 0 1 1 0-2H128V37.9a5 5 0 1 1 2 0V82h-28.1zm16-64a5 5 0 1 1 0-2H146v44.1a5 5 0 1 1-2 0V18h-26.1zm102.2 270a5 5 0 1 1 0 2H98v14h-2v-16h124.1zM242 149.9V160h16v34h-16v62h48v48h-2v-46h-48v-66h16v-30h-16v-12.1a5 5 0 1 1 2 0zM53.9 18a5 5 0 1 1 0-2H64V2H48V0h18v18H53.9zm112 32a5 5 0 1 1 0-2H192V0h50v2h-48v48h-28.1zm-48-48a5 5 0 0 1-9.8-2h2.07a3 3 0 1 0 5.66 0H178v34h-18V21.9a5 5 0 1 1 2 0V32h14V2h-58.1zm0 96a5 5 0 1 1 0-2H137l32-32h39V21.9a5 5 0 1 1 2 0V66h-40.17l-32 32H117.9zm28.1 90.1a5 5 0 1 1-2 0v-76.51L175.59 80H224V21.9a5 5 0 1 1 2 0V82h-49.59L146 112.41v75.69zm16 32a5 5 0 1 1-2 0v-99.51L184.59 96H300.1a5 5 0 0 1 3.9-3.9v2.07a3 3 0 0 0 0 5.66v2.07a5 5 0 0 1-3.9-3.9H185.41L162 121.41v98.69zm-144-64a5 5 0 1 1-2 0v-3.51l48-48V48h32V0h2v50H66v55.41l-48 48v2.69zM50 53.9v43.51l-48 48V208h26.1a5 5 0 1 1 0 2H0v-65.41l48-48V53.9a5 5 0 1 1 2 0zm-16 16V89.41l-34 34v-2.82l32-32V69.9a5 5 0 1 1 2 0zM12.1 32a5 5 0 1 1 0 2H9.41L0 43.41V40.6L8.59 32h3.51zm265.8 18a5 5 0 1 1 0-2h18.69l7.41-7.41v2.82L297.41 50H277.9zm-16 160a5 5 0 1 1 0-2H288v-71.41l16-16v2.82l-14 14V210h-28.1zm-208 32a5 5 0 1 1 0-2H64v-22.59L40.59 194H21.9a5 5 0 1 1 0-2H41.41L66 216.59V242H53.9zm150.2 14a5 5 0 1 1 0 2H96v-56.6L56.6 162H37.9a5 5 0 1 1 0-2h19.5L98 200.6V256h106.1zm-150.2 2a5 5 0 1 1 0-2H80v-46.59L48.59 178H21.9a5 5 0 1 1 0-2H49.41L82 208.59V258H53.9zM34 39.8v1.61L9.41 66H0v-2h8.59L32 40.59V0h2v39.8zM2 300.1a5 5 0 0 1 3.9 3.9H3.83A3 3 0 0 0 0 302.17V256h18v48h-2v-46H2v42.1zM34 241v63h-2v-62H0v-2h34v1zM17 18H0v-2h16V0h2v18h-1zm273-2h14v2h-16V0h2v16zm-32 273v15h-2v-14h-14v14h-2v-16h18v1zM0 92.1A5.02 5.02 0 0 1 6 97a5 5 0 0 1-6 4.9v-2.07a3 3 0 1 0 0-5.66V92.1zM80 272h2v32h-2v-32zm37.9 32h-2.07a3 3 0 0 0-5.66 0h-2.07a5 5 0 0 1 9.8 0zM5.9 0A5.02 5.02 0 0 1 0 5.9V3.83A3 3 0 0 0 3.83 0H5.9zm294.2 0h2.07A3 3 0 0 0 304 3.83V5.9a5 5 0 0 1-3.9-5.9zm3.9 300.1v2.07a3 3 0 0 0-1.83 1.83h-2.07a5 5 0 0 1 3.9-3.9zM97 100a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-48 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 96a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-144a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM49 36a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM33 68a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 240a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm80-176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm112 176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 180a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 84a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'%3E%3C/path%3E%3C/svg%3E");
+">
     <header>
         <nav class="navbar navbar-expand-lg" data-aos="fade-right" data-aos-duration="500">
             <div class="container-fluid">
@@ -22,9 +23,33 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-center " id="navbarNav">
                     <ul class="navbar-nav">
+
+                        @auth
+    @if(Auth::user()->role === 'admin')
+        <li class="nav-item" data-aos="fade-down" data-aos-duration="400" data-aos-delay="650">
+            <a class="nav-link fw-bold mx-3 text-danger" href="{{ route('admin.dashboard') }}">
+                <i class="bi bi-speedometer2"></i> Admin Panel
+            </a>
+        </li>
+    @endif
+@endauth
+
+
+
                         <li class="nav-item" data-aos="fade-down" data-aos-duration="400" data-aos-delay="200">
                             <a class="nav-link active fw-bold mx-3" aria-current="page" href="{{ route('viaura.viaura') }}">Home</a>
                         </li>
+
+
+                         <li class="nav-item" data-aos="fade-down" data-aos-duration="400" data-aos-delay="200">
+                            <a class="nav-link active fw-bold mx-3" aria-current="page" href="{{ route('dashboard') }}">Cources</a>
+                        </li>
+
+                         <li class="nav-item" data-aos="fade-down" data-aos-duration="400" data-aos-delay="200">
+                            <a class="nav-link active fw-bold mx-3" aria-current="page" href="{{ route('job') }}">Jobs</a>
+                        </li>
+
+
                         <li class="nav-item" data-aos="fade-down" data-aos-duration="400" data-aos-delay="300">
                             <a class="nav-link fw-bold mx-3" href="#aboutme">About Me</a>
                         </li>
@@ -50,12 +75,15 @@
         <!-- Profile Header Section -->
         <div class="profile-header mb-40" data-aos="fade-right" data-aos-duration="800" data-aos-delay="300">
             <div class="user-img">
-                <img class="w-15" src="{{ Auth::user()->profile_photo_path ? asset('profile_images/' . basename(Auth::user()->profile_photo_path)) : asset('Front/images/person.jpeg') }}" alt="user" id="profileImage">
+<img class="w-15"
+     src="{{ Auth::user()->profile_photo_path ? asset('profile_images/' . basename(Auth::user()->profile_photo_path)) : 'https://ui-avatars.com/api/?name=' . urlencode(Auth::user()->name) . '&color=7F9CF5&background=EBF4FF' }}"
+     alt="user"
+     id="profileImage">
                 <button class="edit-btn transition-all" id="editProfileBtn"><i class="fa-solid fa-pen f-12"></i></button>
             </div>
             <div class="user-title" data-aos="fade-left" data-aos-duration="700" data-aos-delay="500">
                 <h3 class="user-name fw-bold m-0">{{ Auth::user()->name }}</h3>
-                <p class="job title fw-600">{{ Auth::user()->job_title ?? 'Full Stack Developer' }}</p>
+                <p class="job title fw-600">{{ Auth::user()->bio  }}</p>
             </div>
         </div>
 
@@ -71,23 +99,23 @@
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-8 ps-0 pe-4">
                         <h4 class="fw-bold mb-20" data-aos="fade-right" data-aos-duration="300" data-aos-delay="200">
-                            {{ Auth::user()->about_title ?? 'Driven by Code, Focused on User' }}</h4>
+                            {{ Auth::user()->about_title ?? 'coder' }}</h4>
                         <p class="fw-bold p-3" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300">
-                            {{ Auth::user()->about_description ?? 'Hi, I\'m Aiden Harris, a Full Stack Developer with solid experience in building modern and responsive web applications. I work with technologies like React, Node.js, and MongoDB to create user-friendly frontends and powerful backends.' }}
+      {{ Auth::user()->bio ?? "Hi, I'm " . Auth::user()->name . "," }}
                         </p>
                     </div>
                     <div class="col-lg-4 position-relative" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
                         <div class="contact">
                             <h5 class="blur-title">Contact</h5>
                             <ul>
-                                <li class="mb-2"><i class="fa-solid fa-phone"></i> : {{ Auth::user()->phone ?? '+123 45678910' }}</li>
-                                <li class="mb-2"><a href="mailto:{{ Auth::user()->email ?? 'ayden.d.harris@gmail.com' }}"><i class="fa-solid fa-paper-plane"></i> : {{ Auth::user()->email ?? 'ayden.d.harris@gmail.com' }}</a></li>
-                                <li class="mb-2"><i class="fa-solid fa-location-dot"></i> : {{ Auth::user()->address ?? 'Maple Ave, Toronto, ON, Canada' }}</li>
+                                <li class="mb-2"><i class="fa-solid fa-phone"></i> : {{ Auth::user()->phone ?? '_' }}</li>
+                                <li class="mb-2"><a href="mailto:{{ Auth::user()->email ?? 'user@gmail.com' }}"><i class="fa-solid fa-paper-plane"></i> : {{ Auth::user()->email ?? 'user@gmail.com' }}</a></li>
+                                <li class="mb-2"><i class="fa-solid fa-location-dot"></i> : {{ Auth::user()->address ?? 'none' }}</li>
                                 @if(Auth::user()->linkedin)
                                 <li class="mb-2"><a href="{{ Auth::user()->linkedin }}" target="_blank"><i class="fa-brands fa-linkedin"></i> Linkedin : {{ Auth::user()->name }}</a></li>
                                 @endif
-                                @if(Auth::user()->githup)
-                                <li class="mb-2"><a href="{{ Auth::user()->githup }}" target="_blank"><i class="fas fa-user-tie"></i> Freelancer : {{ Auth::user()->freelancer_username ?? 'Ayden.d.Harris' }}</a></li>
+                                @if(Auth::user()->github)
+                                <li class="mb-2"><a href="{{ Auth::user()->github }}" target="_blank"><i class="fas fa-user-tie"></i> GitHub : {{ Auth::user()->name ?? '_' }}</a></li>
                                 @endif
                             </ul>
                         </div>
@@ -109,12 +137,7 @@
                                         <li class="mb-2" data-aos="fade-down" data-aos-duration="800" data-aos-delay="{{ 500 + ($loop->index * 50) }}">{{ $skill }}</li>
                                     @endforeach
                                 @else
-                                    <li class="mb-2" data-aos="fade-down" data-aos-duration="800" data-aos-delay="500">Full Website Development</li>
-                                    <li class="mb-2" data-aos="fade-down" data-aos-duration="800" data-aos-delay="550">API Development and Integration</li>
-                                    <li class="mb-2" data-aos="fade-down" data-aos-duration="800" data-aos-delay="600">Web Page Design</li>
-                                    <li class="mb-2" data-aos="fade-down" data-aos-duration="800" data-aos-delay="650">E-commerce Solutions</li>
-                                    <li class="mb-2" data-aos="fade-down" data-aos-duration="800" data-aos-delay="700">Database Design and Management</li>
-                                    <li class="mb-2" data-aos="fade-down" data-aos-duration="800" data-aos-delay="750">Custom Web Applications</li>
+                                    <li class="mb-2" data-aos="fade-down" data-aos-duration="800" data-aos-delay="500">designer</li>
                                 @endif
                             </ul>
                         </div>
@@ -123,30 +146,14 @@
                         <div class="experience">
                             <h4 class="mb-20 ps-32 fw-bold" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">EXPERIENCE</h4>
                             <ul data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
-                                @if(Auth::user()->experiences)
-                                    @foreach(json_decode(Auth::user()->experiences, true) as $experience)
-                                        <li class="mb-2 fw-bold" data-aos="fade-down" data-aos-duration="500" data-aos-delay="{{ 300 + ($loop->index * 100) }}">
-                                            {{ $experience['title'] }}<br>
-                                            {{ $experience['company'] }} | {{ $experience['period'] }}
-                                        </li>
-                                    @endforeach
+                                @if(Auth::user()->experience)
+                                    {{ Auth::user()->experience }}
                                 @else
                                     <li class="mb-2 fw-bold" data-aos="fade-down" data-aos-duration="500" data-aos-delay="300">
-                                        Bachelor's Degree in Computer Science<br>
-                                        University of Toronto | 2018 – 2022
+                                       An ambitious person who seeks to develop his experience<br>
+
                                     </li>
-                                    <li class="mb-2 fw-bold" data-aos="fade-down" data-aos-duration="500" data-aos-delay="400">
-                                        Full Stack Developer<br>
-                                        Tech Solutions Inc. | May 2021 – May 2022
-                                    </li>
-                                    <li class="mb-2 fw-bold" data-aos="fade-down" data-aos-duration="500" data-aos-delay="500">
-                                        Junior Web Developer<br>
-                                        Innovative Web Solutions | June 2020 – April 2021
-                                    </li>
-                                    <li class="mb-2 fw-bold" data-aos="fade-down" data-aos-duration="500" data-aos-delay="600">
-                                        Frontend Developer Intern<br>
-                                        Creative Tech Studio | July 2019 – December 2019
-                                    </li>
+
                                 @endif
                             </ul>
                         </div>
@@ -154,6 +161,51 @@
                 </div>
             </div>
         </section>
+
+
+
+
+<!-- Portfolio Section -->
+<section class="portfolio ptb-100" id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
+                <h2 class="pb-4">PORTFOLIO</h2>
+            </div>
+            @if(Auth::user()->portfolio)
+                <div class="col-lg-4 my-2">
+                    <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="">
+                        <div class="card-content p-4">
+                         <img src="https://1.bp.blogspot.com/-kw1jbCYPVhs/UoxoV5XkVFI/AAAAAAAAMvc/laloO0sy6kA/s640/best-portfolio-sites.jpg"
+                     alt="Default portfolio image"
+                     class="w-100 h-100 object-fit-cover">
+                            <h5 class="mb-2" data-aos="fade-right" data-aos-duration="800" data-aos-delay="300">
+                                {{ Auth::user()->portfolio }}
+                            </h5>
+                            @if(isset($item['link']) && $item['link'])
+                                <a href="{{ $item['link'] }}" target="_blank" class="btn w-100 mt-2 align-center btn-success">
+                                    View Project
+                                </a>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            @else
+                <!-- Default Portfolio Items (Name only) -->
+
+
+                <div class="col-lg-4 my-2">
+                    <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                        <div class="card-content p-4">
+                            <h5 class="mb-2">Still nothing</h5>
+                        </div>
+                    </div>
+                </div>
+            @endif
+        </div>
+    </div>
+</section>
+
 
 
     </main>

@@ -28,6 +28,7 @@ class ProfileUpdateRequest extends FormRequest
          // ...
         'skills' => ['nullable', 'string'],
         'portfolio' => ['nullable', 'string'],
+         'experience' => ['nullable', 'string'],
 
     ];
 
