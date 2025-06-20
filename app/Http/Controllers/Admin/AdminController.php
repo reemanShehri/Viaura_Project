@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Job;
 use App\Models\File;
 use App\Models\Post;
 use App\Models\User;
@@ -11,6 +12,7 @@ use App\Models\College;
 use App\Models\Comment;
 use App\Models\Lecture;
 use App\Models\Student;
+use App\Models\Category;
 use App\Models\University;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -23,6 +25,10 @@ class AdminController extends Controller
         $name = auth()->user()->name;
 
         $coursesCount = Course::count();
+$categoriesCount = Category::count();
+$adminsCount= User::where('role', 'admin')->count();
+
+$jobsCount = Job::count(); // Assuming you have a Job model
 
         $usersCount = User::count();
         // return view('admin.dashboard', compact('name', 'universitiesCount', 'studentsCount', 'coursesCount', 'majorsCount', 'collegesCount', 'usersCount', 'postsCount', 'commentsCount', 'lecturesCount','filesCount'));
@@ -47,8 +53,8 @@ $topCourses = Course::withCount('users')
 
 
 return view('admin.dashboard', compact(
-    'name', 'coursesCount',  'usersCount',
-    'registrationsMonthly', 'topCourses',
+    'name', 'coursesCount',  'usersCount','categoriesCount','jobsCount',
+    'registrationsMonthly', 'topCourses','adminsCount',
 ));
     }
 

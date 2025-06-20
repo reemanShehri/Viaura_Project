@@ -11,6 +11,35 @@
     <link rel="website icon" href="{{ asset('Front/images/LOGO.svg') }}">
     <link rel="stylesheet" href="{{ asset('Front/CSS/education.css') }}">
     <style>
+
+
+
+    .job-card {
+        min-width: 320px;
+        max-width: 320px;
+        flex: 0 0 auto;
+    }
+
+
+
+.simple-btn {
+    background-color: white;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 10px 15px;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.simple-btn:hover {
+    background-color:#6a0dad; /* Purple */
+    color: #fff;
+}
+
+
+
+
         :root {
             --primary-color: #6a0dad;
             --dark-color: #1a1a2e;
@@ -155,10 +184,10 @@
         </li>
     </ul>
 
-    <div class="searchBox" data-aos="fade-left" data-aos-delay="900" data-aos-duration="800">
+    {{-- <div class="searchBox" data-aos="fade-left" data-aos-delay="900" data-aos-duration="800">
         <i class="fas fa-magnifying-glass"></i>
         <input type="text" placeholder="Search jobs..." />
-    </div>
+    </div> --}}
 
     <div class="user-account">
      <img class="w-30"
@@ -190,7 +219,7 @@
         </section>
 
         <!-- Jobs Section -->
-        <section id="jobs" class="py-5">
+<section id="jobs" class="py-5">
             <div class="container">
                 <div class="row mb-5">
                     <div class="col-12 text-center">
@@ -199,7 +228,7 @@
                     </div>
                 </div>
 
- <div class="row">
+    {{-- <div class="row">
                   @foreach($categories as $category)
                     <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
                         <div class="card job-card h-100">
@@ -253,8 +282,118 @@
                     <br>
                     @endforeach
                 </div>
+    </div> --}}
+
+
+    <div class="position-relative">
+    <!-- زر السهم اليسار -->
+    <button class="btn btn-light position-absolute top-50 start-0 translate-middle-y z-10"
+            onclick="scrollCategories('left')">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <div id="categoriesSlider"
+         class="d-flex overflow-auto gap-4 px-5"
+         style="scroll-behavior: smooth;">
+        @foreach($categories as $category)
+            <div class="card job-card flex-shrink-0" style="width: 320px; height: 100%;" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
+                <div class="position-relative" style="height: 150px; overflow: hidden;">
+                    <img src="https://static.vecteezy.com/system/resources/previews/003/807/899/large_2x/programmer-computers-in-workplace-vector.jpg"
+                         class="w-100 h-100" style="object-fit: cover;" alt="{{ $category->name }}">
+                    <span class="category-badge">{{ $category->name }}</span>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ $category->name }}</h5>
+                    <div class="job-item bg-light p-2 rounded text-muted small">
+                        {{ $category->job_opportunities }} jobs available
+                    </div>
+
+
+
+
+
+
+                    {{--  --}}
+
+<style>
+.simple-btn {
+    background-color: white;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 10px 15px;
+    width: 100%;
+    text-align: left;
+    border-radius: 12px; /* حواف مدورة */
+    margin-top: 20px;    /* مسافة من الأعلى */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.simple-btn:hover {
+    background-color: #800080; /* بنفسجي عند التحويم */
+    color: #fff;
+}
+</style>
+
+<!-- تأكد أن كل عنصر له ID فريد -->
+<div class="job-category">
+    <button class="simple-btn" type="button" data-bs-toggle="collapse" data-bs-target="#jobs-{{ $category->id }}" aria-expanded="false" aria-controls="jobs-{{ $category->id }}">
+        Total: {{ $category->jobs->count() }} jobs
+    </button>
+
+    <div class="collapse mt-3" id="jobs-{{ $category->id }}">
+        <div class="card card-body">
+            <ul class="list-group list-group-flush">
+                @foreach ($category->jobs as $job)
+                    <li class="list-group-item">
+                        <strong>{{ $job->title }}</strong><br>
+                    </li>
+                @endforeach
+            </ul>
+
+            <div class="total-jobs mt-3 pt-2 border-top text-center">
+                <span class="badge bg-dark rounded-pill px-3 py-2">
+                    Total: {{ $category->jobs->count() }} jobs
+                </span>
             </div>
+        </div>
+    </div>
+</div>
+
+
+
+                    {{-- <div class="total-jobs mt-3 pt-2 border-top text-center">
+                        <span class="badge bg-dark rounded-pill px-3 py-2">
+                            Total: {{ $category->jobs->count() }} jobs
+                        </span>
+                    </div> --}}
+                </div>
+            </div>
+        @endforeach
+    </div>
+
+    <!-- زر السهم اليمين -->
+    <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y z-10"
+            onclick="scrollCategories('right')">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+</div>
+
         </section>
+
+
+        <script>
+    function scrollCategories(direction) {
+        const container = document.getElementById('categoriesSlider');
+        const scrollAmount = 320 * 3 + 48; // عرض 3 بطاقات + المسافات بينهم
+
+        if (direction === 'left') {
+            container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        } else {
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    }
+</script>
+
 
         <!-- Freelance Guide Section -->
         <section class="py-5 freelance-section">
@@ -588,5 +727,8 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
+
+
+
 </body>
 </html>

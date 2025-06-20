@@ -61,8 +61,13 @@
                         <li data-aos="fade-down" data-aos-delay="300" data-aos-duration="800" class="nav-item">
                             <a class="nav-link" aria-current="page" href="{{ route('viaura.viaura') }}">Home</a>
                         </li>
+
+
+
+
+
                         <li data-aos="fade-down" data-aos-delay="400" data-aos-duration="800" class="nav-item">
-                            <a class="nav-link active" href="#courses">Courses</a>
+                            <a class="nav-link active" href="{{ route('dashboard') }}">Courses</a>
                         </li>
                         <li data-aos="fade-down" data-aos-delay="500" data-aos-duration="800" class="nav-item">
                             <a class="nav-link" href="#contact">Contact</a>
@@ -82,16 +87,31 @@
 
                     <div class="searchBox" data-aos="fade-left" data-aos-delay="700" data-aos-duration="800">
                         <i class="fas fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Search courses" />
+                        <input type="text"  id="courseSearch" placeholder="Search courses" />
                     </div>
 
-                    <div class="user-account">
+                    {{-- <div class="user-account">
                         <img class="w-30" src="{{ asset('Front/images/person.jpeg') }}" alt="user" data-aos="fade-left" data-aos-delay="900"
                             data-aos-duration="800">
                         <a href="{{ route('profile.show') }}" data-aos="fade-left" data-aos-delay="1100" data-aos-duration="800">
                             {{ Auth::user()->name }}
                         </a>
-                    </div>
+                    </div> --}}
+
+
+                     <div class="user-account">
+     <img class="w-30"
+     src="{{ Auth::user()->profile_photo_path ? asset('profile_images/' . basename(Auth::user()->profile_photo_path)) : 'https://ui-avatars.com/api/?name=' . urlencode(Auth::user()->name) . '&color=7F9CF5&background=EBF4FF' }}"
+     alt="user"
+     data-aos="fade-left"
+     data-aos-delay="1000"
+     data-aos-duration="800">
+        <a href="{{ route('profile.show') }}" data-aos="fade-left" data-aos-delay="1100" data-aos-duration="800">
+            {{ Auth::user()->name }}
+        </a>
+    </div>
+</div>
+       
                 </div>
             </div>
         </nav>
@@ -124,7 +144,7 @@
                 <div class="row">
                     @foreach($category->courses as $course)
                     <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
-                        <div class="card course-card h-100">
+                        <div class="card course-card h-100"  >
                             <img src="{{ asset('Front/images/educational-program.jpg') }}" class="card-img-top" alt="{{ $course->title }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $course->title }}</h5>
@@ -195,6 +215,24 @@
     <script>
         AOS.init();
     </script>
+
+
+<script>
+    document.getElementById('courseSearch').addEventListener('keyup', function() {
+        const searchValue = this.value.toLowerCase();
+        const courses = document.querySelectorAll('.course-card');
+
+        courses.forEach(course => {
+            const title = course.querySelector('.card-title').textContent.toLowerCase();
+            if (title.includes(searchValue)) {
+                course.closest('.col-lg-4').style.display = 'block';
+            } else {
+                course.closest('.col-lg-4').style.display = 'none';
+            }
+        });
+    });
+</script>
+
 </body>
 
 </html>
