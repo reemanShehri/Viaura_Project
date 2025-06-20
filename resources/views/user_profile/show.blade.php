@@ -99,7 +99,7 @@
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-8 ps-0 pe-4">
                         <h4 class="fw-bold mb-20" data-aos="fade-right" data-aos-duration="300" data-aos-delay="200">
-                            {{ Auth::user()->about_title ?? 'coder' }}</h4>
+                            {{ Auth::user()->about_title ?? 'bio' }}</h4>
                         <p class="fw-bold p-3" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300">
       {{ Auth::user()->bio ?? "Hi, I'm " . Auth::user()->name . "," }}
                         </p>
