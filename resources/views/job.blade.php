@@ -481,7 +481,12 @@
             <div class="container">
                 <div class="row mb-5">
                     <div class="col-12 text-center">
-                        <h2 class="display-5 mb-3" data-aos="fade-up">Recommended Freelance Courses</h2>
+<a href="{{ route('dashboard') }}" class="block no-underline hover:no-underline text-black">
+    <h2 class="display-5 mb-3 text-black" data-aos="fade-up">
+        Recommended Freelance Courses
+    </h2>
+</a>
+
                         <p class="lead text-muted" data-aos="fade-up" data-aos-delay="100">Boost your skills with these specially selected courses</p>
                     </div>
                 </div>
